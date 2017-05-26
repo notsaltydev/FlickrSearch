@@ -1,3 +1,27 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <div class="row">
+    <div class="center-block">
+      <h2>Flickr Search App</h2>
+    </div>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1">@Flickr</span>
+    <input type="search" class="form-control" placeholder="Type for searching..." [formControl]="searchControl"
+           aria-describedby="basic-addon1">
+  </div>
+  <div class="row description">
+    <div *ngFor="let photo of photos">
+      <div class="col-sm-6 col-md-3">
+        <div class="thumbnail">
+          <img src="{{photo.url}}" alt="" (click)="showPhoto(photo)">
+          <!--<div class="caption">-->
+          <!--<h4>{{photo.title}}</h4>-->
+          <!--<p>photo id: {{photo.id}}</p>-->
+          <!--<p><a (click)="showPhoto(photo)" class="btn btn-primary" role="button">Show Details</a>
+          <a (click)="nextTab(photo.url)" class="btn btn-default" role="button">Show Image</a ></p>-->
+          <!--</div>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
